@@ -5,15 +5,20 @@
 #
 
 setupcheck:
-    path: /api/setup-check
-    controller: App\Controller\DefaultController::setupCheck
+  path: /api/setup-check
+  controller: App\Controller\DefaultController::setupCheck
+
+get_currencies:
+  path: /api/get-currencies
+  controller: App\Controller\DefaultController::getCurrencies
+
+get_historical_rates:
+  path: /api/get-historical-rates
+  controller: App\Controller\DefaultController::getHistoricalRates
 
 index:
-    path: /{wildcard}
-    defaults: {
-        _controller: App\Controller\DefaultController::index
-    }
-    requirements:
-        wildcard: .*
-    # controller: App\Controller\DefaultController::index
-
+  path: /{wildcard}
+  defaults: { _controller: App\Controller\DefaultController::index }
+  requirements:
+    wildcard: .*
+  # controller: App\Controller\DefaultController::index
